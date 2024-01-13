@@ -13,7 +13,7 @@ app.get("/send-mail", async (req, res) => {
         return res.status(400).send("OTP is required");
     }
 
-    const message_body = `<h1>OTP Code</h1><p>Your OTP code is: + ${otp}</p>`;
+    const message_body = `<h1>OTP Code</h1><p>Your OTP code is: ${otp}</p>`;
     await sendMail(to, "OTP Code", message_body);
 
     res.end();
